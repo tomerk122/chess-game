@@ -1,0 +1,50 @@
+﻿@page
+@model HalfChessServer.Pages.Queries.GamesOfPlayerModel
+
+@{
+    ViewData["nav"] = "Addition";
+    ViewData["query"] = "games of player";
+    ViewData["Title"] = "Queries";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<form asp-action="GamesOfPlayer" method="get" class="row">
+    <div class="col-5">
+        <h2>Games of player :</h2>
+    </div>
+    <div class="col-5">
+        <div class="input-group">
+            <select asp-for="SelectedPlayerId" name="selectedPlayerId" class="form-control" asp-items="ViewBag.uniquePlayers">
+                <option value="">All</option>
+            </select>
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn btn-outline-primary"> View</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Players[0].Quantity)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Players) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

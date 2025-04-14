@@ -1,0 +1,36 @@
+﻿@page
+@model HalfChessServer.Pages.Queries.CountriesModel
+
+@{
+    ViewData["nav"] = "Addition";
+    ViewData["query"] = "coutries";
+    ViewData["Title"] = "Queries";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Players and Countries</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               First @Html.DisplayNameFor(model => model.Player[0].Player.Name) ever played by Country
+            </th>
+            <th>
+               Country
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Player) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Player.Name)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Player.Country.Name)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

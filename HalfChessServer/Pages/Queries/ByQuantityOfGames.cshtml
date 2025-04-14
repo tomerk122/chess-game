@@ -1,0 +1,71 @@
+﻿@page
+@model HalfChessServer.Pages.Queries.ByQuantityOfGamesModel
+
+@{
+    ViewData["nav"] = "Addition";
+    ViewData["query"] = "all Players by quantity of game";
+    ViewData["Title"] = "Queries";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    int currentQuantity = -1;
+}
+
+<h1>all Players by quantity of games</h1>
+
+<table class="table">
+@foreach (var item in Model.Player) {
+            @if (item.Quantity != currentQuantity)
+            {
+                {
+                    currentQuantity = item.Quantity;
+                }
+                <tr>
+                    <th colspan="5">
+                        @(currentQuantity) Games:
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Player[0].PlayerNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Player[0].Name)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Player[0].PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Player[0].RegistedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Player[0].Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Player[0].Country)
+                    </td>
+                </tr>
+            }
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.Name)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

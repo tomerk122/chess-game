@@ -1,0 +1,36 @@
+﻿@page
+@model HalfChessServer.Pages.Queries.LastGameModel
+
+@{
+    ViewData["nav"] = "Addition";
+    ViewData["query"] = "Last game of Players";
+    ViewData["Title"] = "Queries";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Players and Last game</h1>
+<p> Shows all players sorted in descending order by name but case sensitive</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.History[0].Name)
+            </th>
+            <th>
+                played Last game date
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.History) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.LastPlayDate)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

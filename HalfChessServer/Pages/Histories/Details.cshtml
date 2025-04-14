@@ -1,0 +1,54 @@
+﻿@page
+@model HalfChessServer.Pages.Histories.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    ViewData["nav"] = "Histories";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Games</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.History.AtFrom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.History.AtFrom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.History.AtTo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.History.AtTo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.History.Result)
+        </dt>
+        <dd class="col-sm-10">
+           
+            @if (Model.History.Result == "Lose")
+            {
+                @Html.DisplayFor(model => model.History.Result)
+                <span class="text-danger">Computer Won!</span>
+            }
+            @if (Model.History.Result == "Win")
+            {
+                <span class="text-success ">Winner</span>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            Player
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PlayerName <!-- Use Model to access PlayerName -->
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.History.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

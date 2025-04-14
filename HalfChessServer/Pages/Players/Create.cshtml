@@ -1,0 +1,63 @@
+﻿@page
+@model HalfChessServer.Pages.Players.CreateModel
+
+@{
+    ViewData["nav"] = "Register";
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Player</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="alert-danger"> @ViewData["ErrorMsg"]</div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Player.PlayerNumber" class="control-label"></label>
+                <input asp-for="Player.PlayerNumber" class="form-control" />
+                <span asp-validation-for="Player.PlayerNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Name" class="control-label"></label>
+                <input asp-for="Player.Name" class="form-control" />
+                <span asp-validation-for="Player.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.PhoneNumber" class="control-label"></label>
+                <input asp-for="Player.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Player.PhoneNumber" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="Player.RegistedDate" class="control-label"></label>
+                <input asp-for="Player.RegistedDate" class="form-control" />
+                <span asp-validation-for="Player.RegistedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Quantity" class="control-label"></label>
+                <input asp-for="Player.Quantity" class="form-control" />
+                <span asp-validation-for="Player.Quantity" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Player.CountryId" class="control-label"></label>
+                <select asp-for="Player.CountryId" class="form-control" asp-items="@(new SelectList(ViewBag.CountryId, "Value", "Text", null))">
+                    <option value="">-- Select a country --</option>
+                </select>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

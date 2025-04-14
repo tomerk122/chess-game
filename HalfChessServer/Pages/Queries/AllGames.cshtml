@@ -1,0 +1,54 @@
+﻿@page
+@model HalfChessServer.Pages.Queries.AllGamesModel
+
+@{
+    ViewData["nav"] = "Addition";
+    ViewData["query"] = "all games";
+    ViewData["Title"] = "Queries";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Details of all games</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.History[0].Player)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.History[0].AtFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.History[0].AtTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.History[0].Result)
+            </th>          
+            @* <th></th> *@
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.History) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AtFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AtTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Result)
+            </td>            
+            @* <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td> *@
+        </tr>
+}
+    </tbody>
+</table>
