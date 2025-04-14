@@ -117,3 +117,71 @@ HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.runtimeconfig.json
 HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.runtimeconfig.dev.json
 HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.xml
 HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.pdb
+
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]ogs/
+*.log
+*.cache
+*.tmp
+*.bak
+*.swp
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.dbmdl
+*.pdb
+*.vsp
+*.vsscc
+
+# Visual Studio
+.vs/
+*.csproj.user
+
+# Entity Framework design files
+*.edmx.diagram
+*.tt
+
+# Resharper / Rider
+.idea/
+*.DotSettings.user
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.Local.json
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Others
+*.sqlite
+*.sdf
+*.mdf
+*.dacpac
+
+# Image / binary assets (optional - depends if you need them or not)
+*.jpg
+*.jpeg
+*.gif
+*.png
+*.bmp
+*.ico
+*.tiff
+*.svg
+*.mp4
+*.avi
+*.mp3
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
