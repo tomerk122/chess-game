@@ -6,182 +6,79 @@
 *.userosscache
 *.sln.docstates
 *.userprefs
-*.vspscc
-*.vssscc
-*_i.c
-*_p.c
-*.ncb
-*.sbr
-*.tlb
-*.tli
-*.tlh
-*.tmp
-*.log
-*.vsix
-*.pidb
-*.svclog
-*.scc
 
 # Build results
 [Dd]ebug/
-[Dd]ebugPublic/
 [Rr]elease/
-[Rr]eleases/
 x64/
 x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
-bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+[Bb]uild/
 
 # NuGet Packages
 *.nupkg
-# The packages folder can be ignored because of Package Restore
 **/[Pp]ackages/*
-# except build/, which is used as an MSBuild target.
 !**/[Pp]ackages/build/
-# Uncomment if necessary however generally it will be regenerated when needed
-#!**/[Pp]ackages/repositories.config
-# NuGet v3's project.json files produces more ignorable files
 *.nuget.props
 *.nuget.targets
 
-# Visual Studio cache files
-# files ending in .cache can be ignored
+# Visual Studio cache/options
+*.vs/
 *.[Cc]ache
-# but keep track of directories ending in .cache
 !?*.[Cc]ache/
+*.opendb
+*.VC.db
 
-# Others
-ClientBin/
-~$*
-*~
-*.dbmdl
-*.dbproj.schemaview
-*.jfm
-*.pfx
-*.publishsettings
-orleans.codegen.cs
-
-# SQL Server files
-*.mdf
-*.ldf
-*.ndf
-
-# ReSharper is a .NET coding add-in
+# ReSharper
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
-
-# JustCode is a .NET coding addin-in
-.JustCode
-
-# TeamCity is a build add-in
-_TeamCity*
-
-# DotCover is a Code Coverage Tool
-*.dotCover
-
-# AxoCover is a Code Coverage Tool
-.axoCover/*
-!.axoCover/settings.json
-
-# Visual Studio code coverage results
-*.coverage
-*.coveragexml
-
-# Backup & report files from converting an old project file
-# to a newer Visual Studio version
-_UpgradeReport_Files/
-Backup*/
-UpgradeLog*.XML
-UpgradeLog*.htm
-ServiceFabricBackup/
-*.rptproj.bak
 
 # .NET Core
 project.lock.json
 project.fragment.lock.json
 artifacts/
 
-# Local History for Visual Studio
-.localhistory/
-HalfChessClient/packages/
-HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.dll
-HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.pdb
-HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.deps.json
-HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.runtimeconfig.json
-HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.runtimeconfig.dev.json
-HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.xml
-HalfChessClient/bin/Debug/netcoreapp3.1/HalfChessClient.pdb
+# Entity Framework
+*.edmx.diagram
 
-# Build results
-bin/
-obj/
-[Bb]uild/
-[Ll]ogs/
-*.log
-*.cache
-*.tmp
-*.bak
-*.swp
+# Database files
+*.mdf
+*.ldf
+*.ndf
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
 
 # User-specific files
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-*.dbmdl
+~$*
+*~
+*.publishsettings
+
+# Log files and backups
+*.log
+*.bak
+*.tmp
+*.swp
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+
+# HalfChess specific
+HalfChessClient/packages/
+HalfChessClient/bin/
+HalfChessClient/obj/
+HalfChessServer/bin/
+HalfChessServer/obj/
 *.pdb
-*.vsp
-*.vsscc
-
-# Visual Studio
-.vs/
-*.csproj.user
-
-# Entity Framework design files
-*.edmx.diagram
-*.tt
-
-# Resharper / Rider
-.idea/
-*.DotSettings.user
-
-# ASP.NET Core
 appsettings.Development.json
 appsettings.Local.json
-
-# NuGet
-packages/
-*.nupkg
-project.lock.json
-project.fragment.lock.json
-
-# Others
-*.sqlite
-*.sdf
-*.mdf
-*.dacpac
-
-# Image / binary assets (optional - depends if you need them or not)
-*.jpg
-*.jpeg
-*.gif
-*.png
-*.bmp
-*.ico
-*.tiff
-*.svg
-*.mp4
-*.avi
-*.mp3
 
 # OS-generated files
 .DS_Store
 Thumbs.db
-ehthumbs.db
-desktop.ini
